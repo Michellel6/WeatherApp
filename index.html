@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1>
+        <i class="fa-solid fa-cloud-sun"></i>
+        Weather Dashboard
+    </h1>
+
+   <div class="clocks">
+
+    <div class="clock-card">
+        <h3>📍 Your Time</h3>
+        <p id="localDate"></p>
+        <h2 id="localTime"></h2>
+    </div>
+
+    <div class="clock-card">
+        <h3>🌍 City Time</h3>
+        <p id="cityDate">Search a city...</p>
+        <h2 id="cityTime">--:--:--</h2>
+    </div>
+
+</div>
+
+    <div class="search-box">
+
+        <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter a city...">
+
+        <button id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button id="locationBtn">
+            <i class="fa-solid fa-location-crosshairs"></i>
+        </button>
+
+        <button id="favoriteBtn">
+            <i class="fa-solid fa-star"></i>
+        </button>
+
+    </div>
+
+    <div id="loading" class="hidden">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        Loading weather...
+    </div>
+
+    <div id="weatherCard" class="card">
+   
+        <h2 id="city"></h2>
+
+        <img id="weatherIcon">
+
+        <h1 id="temperature"></h1>
+
+        <h3 id="description"></h3>
+
+        <div class="weather-grid">
+
+            <div class="info-box">
+                <i class="fa-solid fa-temperature-half"></i>
+                <p>Feels Like</p>
+                <span id="feelsLike"></span>
+            </div>
+
+        <div class="chart-container">
+
+           <h2>Today's Temperature</h2>
+
+           <canvas id="tempChart"></canvas>
+
+        </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-droplet"></i>
+                <p>Humidity</p>
+                <span id="humidity"></span>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-wind"></i>
+                <p>Wind</p>
+                <span id="wind"></span>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-eye"></i>
+                <p>Visibility</p>
+                <span id="visibility"></span>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-gauge"></i>
+                <p>Pressure</p>
+                <span id="pressure"></span>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-sun"></i>
+                <p>Sunrise</p>
+                <span id="sunrise"></span>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-moon"></i>
+                <p>Sunset</p>
+                <span id="sunset"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="forecast">
+
+        <h2>5-Day Forecast</h2>
+
+        <div id="forecastCards">
+
+</div>
+
+    <div class="favorites">
+
+    <h2>⭐ Favourite Cities</h2>
+
+    <div id="favoritesList"></div>
+
+</div>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
